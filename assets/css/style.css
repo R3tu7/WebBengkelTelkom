@@ -61,7 +61,7 @@ img{
     height: auto;
     transform: translateY(-20px); /* Mengangkat logo ke atas sebanyak 10px */
   }
-
+ 
 /* IMAGE ZOOM */
 .image-zoom{
     position: relative;
@@ -182,7 +182,7 @@ img{
 
 /* COUNTER */
 #counter {
-    background: linear-gradient(rgba(85, 162, 239, 0.4), rgba(111, 195, 250, 0.3)), url(../images/kristal.jpg);
+    background: linear-gradient(rgba(8, 85, 162, 0.725), rgba(111, 194, 250, 0.823)), url(../images/latar.jpg);
     background-position: center;
     background-size: cover;
 }
