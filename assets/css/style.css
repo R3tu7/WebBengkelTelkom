@@ -343,4 +343,21 @@ footer .line-solid {
     backdrop-filter: blur(15px); /* Blur lebih besar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
   }
-  
+
+
+  /* Menambahkan jarak antara ikon dan teks navbar */
+@media (max-width: 767px) {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Memberi jarak antara ikon dan teks */
+  }
+
+  .navbar-brand img {
+    max-height: 40px; /* Ukuran logo lebih kecil di mobile */
+  }
+
+  .navbar-brand span {
+    margin-top: 0; /* Menghilangkan margin-top yang terlalu besar */
+  }
+}
