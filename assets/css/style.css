@@ -354,7 +354,7 @@ footer .line-solid {
   }
 
   .navbar-brand img {
-    max-height: 40px; /* Ukuran logo lebih kecil di mobile */
+    max-height: 80px; /* Ukuran logo lebih kecil di mobile */
   }
 
   .navbar-brand span {
