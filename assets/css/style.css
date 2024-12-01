@@ -345,21 +345,21 @@ footer .line-solid {
   }
 
 
-  /* Menambahkan jarak antara ikon dan teks navbar */
+/* Menambahkan jarak antara ikon dan teks navbar */
 @media (max-width: 767px) {
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Memberi jarak antara ikon dan teks */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 5px; /* Mengurangi jarak antara ikon dan teks */
+    }
+  
+    .navbar-brand img {
+      max-height: 60px; /* Ukuran logo lebih kecil di mobile */
+    }
+  
+    .navbar-brand span {
+      margin-top: 0; /* Menghilangkan margin-top yang terlalu besar */
+      font-size: 16px; /* Menyesuaikan ukuran font */
+      line-height: 1.2; /* Menyesuaikan tinggi baris */
+    }
   }
-
-  .navbar-brand img {
-    max-height: 80px; /* Ukuran logo lebih kecil di mobile */
-    margin-right: 8 px;
-  }
-
-  .navbar-brand span {
-    margin-top: 0; /* Menghilangkan margin-top yang terlalu besar */
-    font-size: 15px;
-  }
-}
