@@ -17,7 +17,9 @@ body {
     font-family: var(--font-base);
     line-height: 1.7;
     color: var(--c-body);
+   
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: var(--c-dark);
@@ -32,11 +34,12 @@ a:hover {
     color: var(--c-brand-light);
 }
 .large-image {
-    width: 108px; /* Ganti dengan ukuran yang diinginkan */
+    width: 105px; /* Ganti dengan ukuran yang diinginkan */
     height: auto; /* Ini menjaga rasio aspek gambar */
+    margin-right: 16px;
 }
 img{
-    width: 107%;
+    width: 95%;
     height: auto;
 }
 
@@ -326,3 +329,18 @@ footer .line-solid {
     color: white ;
 }
 
+/* Gaya awal navbar */
+#navbar {
+    background-color: rgba(255, 255, 255, 0.3); /* Transparansi */
+    backdrop-filter: blur(10px); /* Blur latar belakang */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Garis bawah tipis */
+  }
+  
+  /* Efek ketika di-scroll */
+  .navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.737); /* Lebih solid saat di-scroll */
+    backdrop-filter: blur(15px); /* Blur lebih besar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  }
+  

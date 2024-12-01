@@ -11,3 +11,17 @@ AOS.init({
 });
 
 
+  // Ambil elemen navbar
+  const navbar = document.getElementById('navbar');
+
+  // Event listener untuk scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      // Tambahkan kelas ketika di-scroll ke bawah
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      // Hapus kelas ketika di-scroll kembali ke atas
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+
