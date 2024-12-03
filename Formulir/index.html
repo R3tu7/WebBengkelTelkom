@@ -1,243 +1,329 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Registrasi Layanan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(
-                270deg,
-                rgba(8, 66, 136, 0.73),
-                rgba(113, 184, 255, 0.845),
-                rgba(3, 3, 172, 0.5),
-                rgba(49, 127, 244, 0.929)
-            );
-            background-size: 400% 400%;
-            animation: aurora-animation 15s ease infinite;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          270deg,
+          rgba(8, 66, 136, 0.73),
+          rgba(113, 184, 255, 0.845),
+          rgba(3, 3, 172, 0.5),
+          rgba(49, 127, 244, 0.929)
+        );
+        background-size: 400% 400%;
+        animation: aurora-animation 15s ease infinite;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
 
-        @keyframes aurora-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
+      @keyframes aurora-animation {
+        0% {
+          background-position: 0% 50%;
         }
-
-        img {
-            max-width: 120px;
-            height: auto;
-            border-radius: 50%;
-            margin: 20px auto;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        100% {
+          background-position: 100% 50%;
         }
+      }
 
-        h2 {
-            margin-bottom: 20px;
-            font-size: 20px;
-            color: black;
-            text-align: center;
-        }
+      img {
+        max-width: 120px;
+        height: auto;
+        border-radius: 50%;
+        margin: 20px auto;
+        display: block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      /* Styling untuk judul form */
+      .form-title {
+        text-align: left; /* Menempatkan judul di tengah */
+        font-size: 24px; /* Ukuran font judul */
+        font-weight: bold; /* Membuat teks lebih tebal */
+        color: #1d7dbd; /* Warna biru yang konsisten dengan tema form */
+        margin-bottom: 20px; /* Jarak bawah judul dengan konten form */
+        padding-top: 10px; /* Jarak atas dari konten form */
+      }
 
+      h2 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+      }
+
+      form {
+        max-width: 600px; /* Lebar form lebih besar */
+        width: 100%;
+        background-color: #fff;
+        padding: 30px 25px; /* Padding lebih besar */
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      label {
+        display: block;
+        margin-top: 20px; /* Jarak antar label lebih besar */
+        font-size: 16px; /* Ukuran font label lebih besar */
+        color: #555;
+        font-weight: 500;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 15px; /* Padding lebih besar */
+        margin-top: 8px; /* Jarak antara label dan input */
+        border-radius: 8px; /* Radius lebih besar untuk estetika */
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        font-size: 16px; /* Ukuran font input lebih besar */
+        color: #333;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #1d7dbd;
+        box-shadow: 0 0 5px rgba(30, 118, 200, 0.5);
+        outline: none;
+      }
+
+      button {
+        margin-top: 25px;
+        padding: 15px 20px; /* Padding lebih besar */
+        background-color: #1d7dbd;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px; /* Ukuran font tombol lebih besar */
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #145a8c;
+        transform: scale(1.02);
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+
+      #animatedQueue {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #333; /* Teks menjadi lebih gelap untuk kontras */
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: all 0.5s ease;
+        z-index: 10;
+      }
+
+      #animatedQueue.show {
+        top: 20px;
+        opacity: 1;
+      }
+
+    
+      /* Responsiveness */
+      @media screen and (max-width: 768px) {
         form {
-            max-width: 400px;
-            width: 100%;
-            background-color: #fff;
-            padding: 25px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+          padding: 20px 15px; /* Padding yang lebih kecil di layar lebih kecil */
         }
 
         label {
-            display: block;
-            margin-top: 15px;
-            font-size: 14px;
-            color: #555;
-            font-weight: 500;
+          font-size: 14px; /* Ukuran font label sedikit lebih kecil */
         }
 
         input,
         select {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            font-size: 14px;
-            color: #333;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        input:focus,
-        select:focus {
-            border-color: #1d7dbd;
-            box-shadow: 0 0 5px rgba(30, 118, 200, 0.5);
-            outline: none;
+          padding: 12px; /* Padding sedikit lebih kecil di layar kecil */
         }
 
         button {
-            margin-top: 20px;
-            padding: 12px 20px;
-            background-color: #1d7dbd;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+          padding: 12px 15px; /* Padding tombol lebih kecil */
+          font-size: 16px; /* Ukuran font tombol lebih kecil */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        h2 {
+          font-size: 18px; /* Ukuran font judul lebih kecil */
         }
 
-        button:hover {
-            background-color: #145a8c;
-            transform: scale(1.02);
+        .form-title {
+          font-size: 20px; /* Ukuran font judul form lebih kecil */
         }
 
-        button:active {
-            transform: scale(0.98);
+        input,
+        select {
+          padding: 10px; /* Padding input lebih kecil */
         }
 
-        #animatedQueue {
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #333; /* Teks menjadi lebih gelap untuk kontras */
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: all 0.5s ease;
-            z-index: 10;
+        button {
+          width: 100%; /* Tombol lebar penuh di layar kecil */
         }
-        
-        #animatedQueue.show {
-            top: 20px;
-            opacity: 1;
-        }
-        
-         @media (max-width: 480px) {
-            body {
-                padding: 20px;
-            }
-        
-            img {
-                max-width: 100px;
-            }
-        
-            form {
-                padding: 15px;
-            }
-        
-            label {
-                font-size: 12px;
-            }
-        
-            input,
-            select {
-                font-size: 12px;
-                padding: 8px;
-            }
-        
-            button {
-                font-size: 12px;
-                padding: 10px;
-            }
-        
-            #queueContainer p {
-                font-size: 16px;
-            }
-        }        
+      }
     </style>
-</head>
-<body>
-    <img src="./logo.jpg" alt="Logo">
+  </head>
+  <body>
+    <img src="./logo.jpg" alt="Logo" />
     <h2>Form Registrasi Service Motor dan Mobil</h2>
     <div id="animatedQueue"></div>
 
     <form id="registrationForm">
-        <label for="ownerName">Nama Pemilik:</label>
-        <input type="text" id="ownerName" required />
+        <h2 class="form-title">PILIHAN SUBTOPIK</h2>
+
+        <!-- Judul form -->
+        <label for="service">Layanan:</label>
+        <select id="service" name="service" required>
+          <option value="">Pilih Layanan</option>
+          <option value="ahaas-kunjungan">AHAAS Layanan Kunjungan</option>
+          <option value="ahaas-boking">AHAAS Boking Services</option>
+        </select>
         
-        <label for="vehicleType">Jenis Kendaraan:</label>
-        <select id="vehicleType" required>
-            <option value="motor">Motor</option>
-            <option value="mobil">Mobil</option>
-        </select>
+      <h2 class="form-title">INFORMASI DIRI</h2>
+      <!-- Judul form -->
+      <label for="ownerName">Nama Pemilik:</label>
+      <input type="text" id="ownerName" required />
 
-        <label for="ownerPhone">Nomor Telepon:</label>
-        <input type="tel" id="ownerPhone" required placeholder="Masukkan nomor telepon" />
+      <label for="ownerPhone">Nomor Telepon:</label>
+      <input
+        type="tel"
+        id="ownerPhone"
+        required
+        placeholder="Masukkan nomor telepon"
+      />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
 
-        <label for="serviceType">Layanan yang Dipilih:</label>
-        <select id="serviceType" required>
-            <option value="gantioli">Ganti Oli</option>
-            <option value="serviceringan">Service Ringan</option>
-            <option value="paketinjeks">Paket Injeks</option>
-            <option value="gantibanmotordanmobil">Ganti Ban Motor dan Mobil</option>
-            <option value="serviceremmobil">Service Rem Mobil</option>
-            <option value="serviceacmobil">Service AC Mobil</option>
-            <option value="tuneup">Tune Up</option>
-        </select>
+      <label for="province">Provinsi:</label>
+      <select id="province" required>
+        <option value="">Pilih Provinsi</option>
+        <option value="jakarta">DKI Jakarta</option>
+        <option value="jawa-barat">Jawa Barat</option>
+        <option value="jawa-tengah">Jawa Tengah</option>
+        <option value="jawa-timur">Jawa Timur</option>
+        <option value="bali">Bali</option>
+        <option value="sumatra">Sumatra</option>
+        <option value="kalimantan">Kalimantan</option>
+        <option value="sulawesi">Sulawesi</option>
+      </select>
 
-        <label for="appointmentDate">Tanggal dan Waktu:</label>
-        <input type="datetime-local" id="appointmentDate" required />
+      <label for="city">Kota:</label>
+      <select id="city" required>
+        <option value="">Pilih Kota</option>
+        <option value="jakarta-utara">Jakarta Utara</option>
+        <option value="jakarta-selatan">Jakarta Selatan</option>
+        <option value="bandung">Bandung</option>
+        <option value="semarang">Semarang</option>
+        <option value="surabaya">Surabaya</option>
+        <option value="medan">Medan</option>
+        <option value="palembang">Palembang</option>
+        <option value="pekanbaru">Pekanbaru</option>
+        <option value="padang">Padang</option>
+        <option value="pontianak">Pontianak</option>
+        <option value="banjarmasin">Banjarmasin</option>
+        <option value="samarinda">Samarinda</option>
+        <option value="balikpapan">Balikpapan</option>
+        <option value="makassar">Makassar</option>
+        <option value="manado">Manado</option>
+        <option value="kendari">Kendari</option>
+        <option value="palopo">Palopo</option>
+      </select>
 
-        <label for="paymentMethod">Metode Pembayaran:</label>
-        <select id="paymentMethod" required>
-            <option value="qris">QRIS</option>
-            <option value="tunai">Tunai</option>
-        </select>
+      <label for="motorType">Varian Motor:</label>
+      <select id="motorType" required>
+        <option value="">Pilih Varian Motor</option>
+        <option value="honda-vario">Honda Vario</option>
+        <option value="yamaha-nmax">Yamaha NMAX</option>
+        <option value="suzuki-satria">Suzuki Satria</option>
+        <option value="kawasaki-ninja">Kawasaki Ninja</option>
+      </select>
 
-        <button type="submit">Daftar</button>
+      <label for="manufactureYear">Tahun Pembuatan:</label>
+      <select id="manufactureYear" required>
+        <option value="">Pilih Tahun</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+
+      <label for="serviceType">Layanan yang Dipilih:</label>
+      <select id="serviceType" required>
+        <option value="gantioli">Service Berat</option>
+        <option value="serviceringan">KPB (Kupon Pearawatan Berkala)</option>
+        <option value="paketinjeks">Paket Injeks</option>
+        <option value="gantioli">Lainya</option>
+      </select>
+      <h2 class="form-title">PILIHAN WAKTU KEDATANGAN</h2>
+      <!-- Judul form -->
+      <label for="appointmentDate">Tanggal dan Waktu:</label>
+      <input type="datetime-local" id="appointmentDate" required />
+
+      <label for="paymentMethod">Metode Pembayaran:</label>
+      <select id="paymentMethod" required>
+        <option value="qris">QRIS</option>
+        <option value="tunai">Tunai</option>
+      </select>
+
+      <button type="submit">Daftar</button>
     </form>
 
     <script>
-        let currentQueueNumber = 0;
-    
-        const animatedQueue = document.getElementById("animatedQueue");
-        document.getElementById("registrationForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-    
-            if (currentQueueNumber < 100) {
-                currentQueueNumber += 1;
-    
-                // Tambahkan nomor antrean dan ubah latar belakang menjadi biru muda
-                animatedQueue.innerText = `Nomor Antrian: ${currentQueueNumber}`;
-                animatedQueue.style.backgroundColor = "#b3d9ff"; // Biru muda
-                animatedQueue.classList.add("show");
-    
-                // Hilangkan animasi setelah 3 detik
-                setTimeout(() => {
-                    animatedQueue.classList.remove("show");
-                    animatedQueue.style.backgroundColor = ""; // Kembali ke default
-                }, 3000);
-    
-                // Reset form setelah diisi
-                this.reset();
-            } else {
-                alert("Nomor antrian sudah mencapai batas maksimal (100).");
-            }
+      let currentQueueNumber = 0;
+
+      const animatedQueue = document.getElementById("animatedQueue");
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (currentQueueNumber < 100) {
+            currentQueueNumber += 1;
+
+            // Tambahkan nomor antrean dan ubah latar belakang menjadi biru muda
+            animatedQueue.innerText = `Nomor Antrian: ${currentQueueNumber}`;
+            animatedQueue.style.backgroundColor = "#b3d9ff"; // Biru muda
+            animatedQueue.classList.add("show");
+
+            // Hilangkan animasi setelah 3 detik
+            setTimeout(() => {
+              animatedQueue.classList.remove("show");
+              animatedQueue.style.backgroundColor = ""; // Kembali ke default
+            }, 3000);
+
+            // Reset form setelah diisi
+            this.reset();
+          } else {
+            alert("Nomor antrian sudah mencapai batas maksimal (100).");
+          }
         });
     </script>
-    
-</body>
+  </body>
 </html>
