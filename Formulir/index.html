@@ -9,207 +9,246 @@
       rel="stylesheet"
     />
     <style>
-        body {
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(
-              270deg,
-              rgba(8, 66, 136, 0.73),
-              rgba(113, 184, 255, 0.845),
-              rgba(3, 3, 172, 0.5),
-              rgba(49, 127, 244, 0.929)
-            );
-            background-size: 400% 400%;
-            animation: aurora-animation 15s ease infinite;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          
-          @keyframes aurora-animation {
-            0% {
-              background-position: 0% 50%;
-            }
-            100% {
-              background-position: 100% 50%;
-            }
-          }
-          
-          img {
-            max-width: 120px;
-            height: auto;
-            border-radius: 50%;
-            margin: 20px auto;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-          }
-          
-          .form-title {
-            text-align: left;
-            font-size: 24px;
-            font-weight: bold;
-            color: #1d7dbd;
-            margin-bottom: 20px;
-            padding-top: 10px;
-          }
-          
-          h2 {
-            margin-bottom: 20px;
-            font-size: 20px;
-            color: black;
-            text-align: center;
-          }
-          
-          form {
-            width: 100%;
-            background-color: #fff;
-            padding: 30px 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            box-sizing: border-box;
-            overflow: hidden;
-          }
-          
-          label {
-            display: block;
-            margin-top: 15px;
-            font-size: 16px;
-            color: #555;
-            font-weight: 500;
-          }
-          
-          input,
-          select {
-            width: 100%;
-            padding: 15px;
-            margin-top: 8px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            font-size: 16px;
-            color: #333;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-          }
-          
-          input:focus,
-          select:focus {
-            border-color: #1d7dbd;
-            box-shadow: 0 0 5px rgba(30, 118, 200, 0.5);
-            outline: none;
-          }
-          
-          button {
-            margin-top: 25px;
-            padding: 15px 20px;
-            background-color: #1d7dbd;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-          }
-          
-          button:hover {
-            background-color: #145a8c;
-            transform: scale(1.02);
-          }
-          
-          button:active {
-            transform: scale(0.98);
-          }
-          
-          #animatedQueue {
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #333;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: all 0.5s ease;
-            z-index: 10;
-          }
-          
-          #animatedQueue.show {
-            top: 20px;
-            opacity: 1;
-          }
-          
-          /* Responsiveness */
-          @media screen and (max-width: 768px) {
-            form {
-              padding: 15px 10px; /* Padding lebih kecil di layar kecil */
-            }
-          
-            label {
-              font-size: 14px; /* Ukuran font label lebih kecil */
-              margin-top: 10px;
-            }
-          
-            input,
-            select {
-              padding: 12px; /* Padding lebih kecil */
-              font-size: 14px; /* Ukuran font lebih kecil */
-            }
-          
-            button {
-              padding: 12px 15px; /* Padding tombol lebih kecil */
-              font-size: 16px; /* Ukuran font tombol lebih kecil */
-            }
-          }
-          
-          @media screen and (max-width: 480px) {
-            h2 {
-              font-size: 18px; /* Ukuran font judul lebih kecil */
-            }
-          
-            .form-title {
-              font-size: 20px; /* Ukuran font judul form lebih kecil */
-            }
-          
-            input,
-            select {
-              padding: 10px; /* Padding input lebih kecil */
-              font-size: 14px; /* Ukuran font lebih kecil */
-            }
-          
-            button {
-              width: 100%; /* Tombol lebar penuh */
-              padding: 12px; /* Padding tombol lebih kecil */
-              font-size: 15px; /* Ukuran font tombol lebih kecil */
-            }
-          
-            form {
-              padding: 10px 5px; /* Padding lebih kecil */
-            }
-          
-            label {
-              font-size: 12px; /* Ukuran font label lebih kecil */
-              margin-top: 5px;
-            }
-          
-            input,
-            select {
-              padding: 10px; /* Padding lebih kecil */
-            }
-          
-            button {
-              padding: 12px 10px; /* Tombol lebih kecil */
-              font-size: 15px; /* Ukuran font tombol lebih kecil */
-            }
-          }
-          
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          270deg,
+          rgba(8, 66, 136, 0.73),
+          rgba(113, 184, 255, 0.845),
+          rgba(3, 3, 172, 0.5),
+          rgba(49, 127, 244, 0.929)
+        );
+        background-size: 400% 400%;
+        animation: aurora-animation 15s ease infinite;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @keyframes aurora-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      img {
+        max-width: 120px;
+        height: auto;
+        border-radius: 50%;
+        margin: 20px auto;
+        display: block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-title {
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+        color: #1d7dbd;
+        margin-bottom: 20px;
+        padding-top: 10px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: black;
+        text-align: center;
+      }
+
+      form {
+        width: 100%;
+        max-width: 500px; /* Maksimal lebar form 500px untuk layar ponsel */
+        background-color: #fff;
+        padding: 25px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        overflow: hidden;
+        margin: 0 auto; /* Mengatur form agar tetap terpusat */
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 14px;
+        margin-top: 8px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        font-size: 16px;
+        color: #333;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #1d7dbd;
+        box-shadow: 0 0 5px rgba(30, 118, 200, 0.5);
+        outline: none;
+      }
+
+      button {
+        margin-top: 25px;
+        padding: 15px 20px;
+        background-color: #1d7dbd;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #145a8c;
+        transform: scale(1.02);
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+      /* Button to go back */
+
+      #animatedQueue {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #333;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: all 0.5s ease;
+        z-index: 10;
+      }
+
+      #animatedQueue.show {
+        top: 20px;
+        opacity: 1;
+      }
+      /* Button to go back */
+      .back-button {
+        position: absolute; /* Menggunakan posisi absolut */
+        top: 20px; /* Jarak dari atas */
+        left: 20px; /* Jarak dari kiri */
+        padding: 12px 20px;
+        background-color: #8fddff; /* Warna hijau */
+        color: white; /* Teks putih */
+        text-decoration: none; /* Tanpa garis bawah */
+        border-radius: 5px; /* Sudut melengkung */
+        transition: background-color 0.3s; /* Efek transisi */
+        font-size: 16px; /* Ukuran font default */
+      }
+
+      .back-button:hover {
+        background-color: #345881; /* Warna hijau lebih gelap saat hover */
+      }
+
+      /* Responsiveness for small devices (e.g., Oppo, Samsung) */
+      @media screen and (max-width: 768px) {
+        .back-button {
+          font-size: 10px; /* Ukuran font sedikit lebih kecil */
+          padding: 8px 12px; /* Padding lebih kecil */
+          top: 10px; /* Posisi lebih tinggi di layar */
+          left: 10px; /* Jarak kiri lebih kecil */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .back-button {
+          font-size: 9px; /* Ukuran font lebih kecil */
+          padding: 6px 14px; /* Padding lebih kecil */
+          top: 8px; /* Posisi lebih tinggi di layar */
+          left: 8px; /* Jarak kiri lebih kecil */
+        }
+      }
+
+      /* Responsiveness for devices like Oppo, Samsung */
+      @media screen and (max-width: 768px) {
+        form {
+          padding: 20px 15px; /* Padding lebih kecil */
+          max-width: 100%; /* Lebar 100% pada layar lebih kecil */
+        }
+
+        label {
+          font-size: 14px; /* Ukuran font label sedikit lebih kecil */
+          margin-top: 10px;
+        }
+
+        input,
+        select {
+          padding: 12px; /* Padding input lebih kecil */
+          font-size: 14px; /* Ukuran font lebih kecil */
+        }
+
+        button {
+          padding: 12px 15px; /* Padding tombol lebih kecil */
+          font-size: 16px; /* Ukuran font tombol lebih kecil */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        h2 {
+          font-size: 18px; /* Ukuran font judul lebih kecil */
+        }
+
+        .form-title {
+          font-size: 20px; /* Ukuran font judul form lebih kecil */
+        }
+
+        input,
+        select {
+          padding: 10px; /* Padding input lebih kecil */
+          font-size: 14px; /* Ukuran font lebih kecil */
+        }
+
+        button {
+          width: 100%; /* Tombol lebar penuh */
+          padding: 12px; /* Padding tombol lebih kecil */
+          font-size: 15px; /* Ukuran font tombol lebih kecil */
+        }
+
+        form {
+          padding: 10px 5px; /* Padding lebih kecil */
+        }
+
+        label {
+          font-size: 12px; /* Ukuran font label lebih kecil */
+          margin-top: 5px;
+        }
+
+        input,
+        select {
+          padding: 10px; /* Padding lebih kecil */
+        }
+
+        button {
+          padding: 12px 10px; /* Tombol lebih kecil */
+          font-size: 15px; /* Ukuran font tombol lebih kecil */
+        }
+      }
     </style>
   </head>
   <body>
@@ -218,16 +257,16 @@
     <div id="animatedQueue"></div>
 
     <form id="registrationForm">
-        <h2 class="form-title">PILIHAN SUBTOPIK</h2>
+      <h2 class="form-title">PILIHAN SUBTOPIK</h2>
 
-        <!-- Judul form -->
-        <label for="service">Layanan:</label>
-        <select id="service" name="service" required>
-          <option value="">Pilih Layanan</option>
-          <option value="ahaas-kunjungan">AHAAS Layanan Kunjungan</option>
-          <option value="ahaas-boking">AHAAS Boking Services</option>
-        </select>
-        
+      <!-- Judul form -->
+      <label for="service">Layanan:</label>
+      <select id="service" name="service" required>
+        <option value="">Pilih Layanan</option>
+        <option value="ahaas-kunjungan">AHAAS Layanan Kunjungan</option>
+        <option value="ahaas-boking">AHAAS Boking Services</option>
+      </select>
+
       <h2 class="form-title">INFORMASI DIRI</h2>
       <!-- Judul form -->
       <label for="ownerName">Nama Pemilik:</label>
@@ -320,6 +359,7 @@
 
       <button type="submit">Daftar</button>
     </form>
+    <a href="../index.html" class="back-button">Kembali ke Web Utama</a>
 
     <script>
       let currentQueueNumber = 0;
