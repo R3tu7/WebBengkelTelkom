@@ -271,7 +271,7 @@
 
     <form id="registrationForm">
       <h2 class="form-title">PILIHAN SUBTOPIK</h2>
-
+    
       <!-- Judul form -->
       <label for="service">Layanan:</label>
       <select id="service" name="service" required>
@@ -279,23 +279,18 @@
         <option value="ahaas-kunjungan">AHAAS Layanan Kunjungan</option>
         <option value="ahaas-boking">AHAAS Boking Services</option>
       </select>
-
+    
       <h2 class="form-title">INFORMASI DIRI</h2>
       <!-- Judul form -->
       <label for="ownerName">Nama Pemilik:</label>
       <input type="text" id="ownerName" required />
-
+    
       <label for="ownerPhone">Nomor Telepon:</label>
-      <input
-        type="tel"
-        id="ownerPhone"
-        required
-        placeholder="Masukkan nomor telepon"
-      />
-
+      <input type="tel" id="ownerPhone" required placeholder="Masukkan nomor telepon" />
+    
       <label for="email">Email:</label>
       <input type="email" id="email" required />
-
+    
       <label for="province">Provinsi:</label>
       <select id="province" required>
         <option value="">Pilih Provinsi</option>
@@ -308,7 +303,7 @@
         <option value="kalimantan">Kalimantan</option>
         <option value="sulawesi">Sulawesi</option>
       </select>
-
+    
       <label for="city">Kota:</label>
       <select id="city" required>
         <option value="">Pilih Kota</option>
@@ -330,7 +325,7 @@
         <option value="kendari">Kendari</option>
         <option value="palopo">Palopo</option>
       </select>
-
+    
       <label for="motorType">Varian Motor:</label>
       <select id="motorType" required>
         <option value="">Pilih Varian Motor</option>
@@ -339,7 +334,7 @@
         <option value="suzuki-satria">Suzuki Satria</option>
         <option value="kawasaki-ninja">Kawasaki Ninja</option>
       </select>
-
+    
       <label for="manufactureYear">Tahun Pembuatan:</label>
       <select id="manufactureYear" required>
         <option value="">Pilih Tahun</option>
@@ -351,7 +346,7 @@
         <option value="2023">2023</option>
         <option value="2024">2024</option>
       </select>
-
+    
       <label for="serviceType">Layanan yang Dipilih:</label>
       <select id="serviceType" required>
         <option value="gantioli">Service Berat</option>
@@ -359,51 +354,50 @@
         <option value="paketinjeks">Paket Injeks</option>
         <option value="gantioli">Lainya</option>
       </select>
+    
       <h2 class="form-title">PILIHAN WAKTU KEDATANGAN</h2>
       <!-- Judul form -->
       <label for="appointmentDate">Tanggal dan Waktu:</label>
       <input type="datetime-local" id="appointmentDate" required />
-
+    
       <label for="paymentMethod">Metode Pembayaran:</label>
       <select id="paymentMethod" required>
         <option value="qris">QRIS</option>
         <option value="tunai">Tunai</option>
       </select>
-
+    
       <button type="submit">Daftar</button>
+    
+      <!-- Queue Number will appear here -->
+      <div id="queueInfo" style="display: none; margin-top: 20px; font-size: 18px; color: #086c8d;">
+        <strong>Nomor Antrian Anda:</strong> <span id="queueNumber"></span>
+      </div>
     </form>
-    <a href="../index.html" class="back-button">←</a> <!-- Replace text with a left arrow symbol -->
-
-
+    
+    <a href="../index.html" class="back-button">←</a>
+    
     <script>
       let currentQueueNumber = 0;
-
-      const animatedQueue = document.getElementById("animatedQueue");
-      document
-        .getElementById("registrationForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          if (currentQueueNumber < 100) {
-            currentQueueNumber += 1;
-
-            // Tambahkan nomor antrean dan ubah latar belakang menjadi biru muda
-            animatedQueue.innerText = `Nomor Antrian: ${currentQueueNumber}`;
-            animatedQueue.style.backgroundColor = "#b3d9ff"; // Biru muda
-            animatedQueue.classList.add("show");
-
-            // Hilangkan animasi setelah 3 detik
-            setTimeout(() => {
-              animatedQueue.classList.remove("show");
-              animatedQueue.style.backgroundColor = ""; // Kembali ke default
-            }, 3000);
-
-            // Reset form setelah diisi
-            this.reset();
-          } else {
-            alert("Nomor antrian sudah mencapai batas maksimal (100).");
-          }
-        });
+    
+      document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+    
+        const ownerName = document.getElementById("ownerName").value;
+    
+        if (currentQueueNumber < 100) {
+          currentQueueNumber += 1;
+    
+          // Display queue number inside the form
+          document.getElementById("queueNumber").textContent = currentQueueNumber;
+    
+          // Show the queue number section
+          document.getElementById("queueInfo").style.display = 'block';
+    
+          // Reset form after submission
+          this.reset();
+        } else {
+          alert("Nomor antrian sudah mencapai batas maksimal (100).");
+        }
+      });
     </script>
-  </body>
-</html>
+    
