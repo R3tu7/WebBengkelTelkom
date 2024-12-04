@@ -148,42 +148,55 @@
         top: 20px;
         opacity: 1;
       }
-      /* Button to go back */
       .back-button {
-        position: absolute; /* Menggunakan posisi absolut */
-        top: 20px; /* Jarak dari atas */
-        left: 20px; /* Jarak dari kiri */
-        padding: 12px 20px;
-        background-color: #8fddff; /* Warna hijau */
-        color: white; /* Teks putih */
-        text-decoration: none; /* Tanpa garis bawah */
-        border-radius: 5px; /* Sudut melengkung */
-        transition: background-color 0.3s; /* Efek transisi */
-        font-size: 16px; /* Ukuran font default */
-      }
-
-      .back-button:hover {
-        background-color: #345881; /* Warna hijau lebih gelap saat hover */
-      }
-
-      /* Responsiveness for small devices (e.g., Oppo, Samsung) */
-      @media screen and (max-width: 768px) {
+        position: absolute; /* Absolute positioning */
+        top: 15px; /* Reduced distance from the top to avoid too close to the edge */
+        left: 15px; /* Reduced distance from the left */
+        width: 50px; /* Slightly larger circular size */
+        height: 50px; /* Same height to keep it circular */
+        display: flex;
+        justify-content: center; /* Center the icon horizontally */
+        align-items: center; /* Center the icon vertically */
+        background-color: #84cae8; /* Light blue background */
+        color: white; /* White text */
+        text-decoration: none; /* Remove underline */
+        border-radius: 50%; /* Make it circular */
+        transition: background-color 0.3s; /* Transition effect */
+        font-size: 24px; /* Larger font size for better visibility */
+        text-align: center;
+    }
+    
+    .back-button:hover {
+        background-color: #345881; /* Darker blue when hovering */
+    }
+    
+    
+    .back-button:hover {
+        background-color: #345881; /* Darker blue when hovering */
+    }
+    
+    /* Responsiveness for tablets (up to 768px) */
+    @media screen and (max-width: 768px) {
         .back-button {
-          font-size: 10px; /* Ukuran font sedikit lebih kecil */
-          padding: 8px 12px; /* Padding lebih kecil */
-          top: 10px; /* Posisi lebih tinggi di layar */
-          left: 10px; /* Jarak kiri lebih kecil */
+            font-size: 16px; /* Smaller font size */
+            width: 35px; /* Smaller width */
+            height: 35px; /* Smaller height */
+            top: 10px; /* Adjust top position */
+            left: 10px; /* Adjust left position */
         }
-      }
-
-      @media screen and (max-width: 480px) {
+    }
+    
+    /* Responsiveness for small mobile devices (up to 480px) */
+    @media screen and (max-width: 480px) {
         .back-button {
-          font-size: 9px; /* Ukuran font lebih kecil */
-          padding: 6px 14px; /* Padding lebih kecil */
-          top: 8px; /* Posisi lebih tinggi di layar */
-          left: 8px; /* Jarak kiri lebih kecil */
+            font-size: 14px; /* Even smaller font size */
+            width: 30px; /* Smaller width for mobile */
+            height: 30px; /* Smaller height */
+            top: 5px; /* Adjust top position to avoid edge */
+            left: 5px; /* Adjust left position */
         }
-      }
+    }
+    
 
       /* Responsiveness for devices like Oppo, Samsung */
       @media screen and (max-width: 768px) {
@@ -359,7 +372,8 @@
 
       <button type="submit">Daftar</button>
     </form>
-    <a href="../index.html" class="back-button">Kembali ke Web Utama</a>
+    <a href="../index.html" class="back-button">←</a> <!-- Replace text with a left arrow symbol -->
+
 
     <script>
       let currentQueueNumber = 0;
